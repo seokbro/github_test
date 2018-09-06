@@ -1,0 +1,16 @@
+> movie_data <- read.csv("C:/Program Files/R/R-3.5.1/library/IMDB_2280_Most_Voted_Movies.csv", header=T)
+> str(movie_data)
+
+> movie_data <- movie_data[,!names(movie_data) %in% c("releasedate", "filminglocation", "color", "budget", "movielink", "years", "prodco", "actors", "writer")]
+> str(movie_data)
+
+> movie_data <- movie_data[,!names(movie_data) %in% c("country", "gross")]
+> str(movie_data)
+
+> movie_data$title <- as.character(movie_data$title)
+> movie_data$rtime <- as.numeric(movie_data$rtime)
+> levels(movie_data$director)[1] <- NA
+> levels(movie_data$aspectratio)[1] <- NA
+
+
+
